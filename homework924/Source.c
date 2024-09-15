@@ -1,6 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <locale.h>
-#include <math.h>
 
 void main()
 {
@@ -8,10 +9,10 @@ void main()
 	setlocale(LC_ALL, "RUS");
 
 	int topb, h;
-	//char symb;
+	char symb;
 
-	//puts("Введите символ, из которого будет строиться фигура:");
-	//scanf("%c", &symb);
+	puts("Введите символ, из которого будет строиться фигура:");
+	scanf("%c", &symb);
 
 	puts("Введите верхнее основание:");
 	scanf("%d", &topb);
@@ -19,37 +20,60 @@ void main()
 	puts("Введите Высоту:");
 	scanf("%d", &h);
 
-	int unb = topb * 2;
+	int empt = topb;
+	int eh = 0;
 
 	for (int i = 0; i < h; i++)
 	{
-		for (int j = topb / 2; j > i; j--)
+		printf(" ");
+	}
+
+	for (int i = 0; i < topb; i++)
+	{
+		printf("%c", symb);
+	}
+
+	printf("\n");
+
+	for (int i = h - 1; i > 0; i--)
+	{
+		for (int j = 0; j < i; j++)
 		{
 			printf(" ");
 		}
 
-		printf("*");
+		printf("%c", symb);
 
-		for (int j = 0; j < unb - topb + 2 * i - 1; j++)
+		for (int j = 0; j < eh; j++)
 		{
-			if (i != 0 && i != h - 1)
-			{
-				printf(" ");
-			}
+			printf(" ");
 		}
+
+		printf("%c", symb);
 
 		for (int j = 0; j < topb - 2; j++)
 		{
-			if (i == 0) printf("*");
-		}
-		for (int j = 0; j < unb - 2; j++)
-		{
-			if (i == h - 1) printf("*");
+			printf(" ");
 		}
 
-		printf("*");
+		printf("%c", symb);
+
+		for (int j = 0; j < eh; j++)
+		{
+			printf(" ");
+		}
+
+		printf("%c", symb);
+
+		empt += 2;
+		eh += 1;
 
 		printf("\n");
+	}
+
+	for (int i = 0; i < empt + 2; i++)
+	{
+		printf("%c", symb);
 	}
 
 	return 0;
