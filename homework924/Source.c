@@ -5,7 +5,7 @@
 
 void main()
 {
-	// Равнобедренная трапеция. Задается высота и верхнее основание
+	// Isosceles trapezoid. The height and upper base are set
 	setlocale(LC_ALL, "RUS");
 
 	int topb, h;
