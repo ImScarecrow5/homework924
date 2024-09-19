@@ -1,12 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-#include <locale.h>
 
 void main()
 {
 	// Isosceles trapezoid. The height and upper base are set
-	setlocale(LC_ALL, "RUS");
 
 	int topb, h;
 	char symb;
